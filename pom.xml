@@ -8,31 +8,14 @@
     <artifactId>huyan-public-api</artifactId>
     <version>0.0.1</version>
 
-    <!-- 依赖 -->
-    <dependencies>
-        <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-            <version>24.0.1</version>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
 
-    <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- 项目git地址 -->
-        <project.git.url></project.git.url>
-        <!-- maven打包插件 -->
-        <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
-        <maven-javadoc-plugin.version>3.3.2</maven-javadoc-plugin.version>
-        <!-- gpg秘钥验证插件 -->
-        <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
-        <!-- maven部署插件 -->
-        <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
-    </properties>
+    <name>${project.artifactId}</name>
 
+    <packaging>pom</packaging>
+    <description>壶言公共api</description>
+
+
+    <!-- 发布命令 mvn clean deploy -P release -->
     <!-- 项目地址 -->
     <url>${project.git.url}</url>
 
@@ -56,6 +39,31 @@
             <timezone>+8</timezone>
         </developer>
     </developers>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- 项目git地址 -->
+        <project.git.url>https://github.com/chahuyun/huyan-public-api</project.git.url>
+        <!-- maven打包插件 -->
+        <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
+        <maven-javadoc-plugin.version>3.3.2</maven-javadoc-plugin.version>
+        <!-- gpg秘钥验证插件 -->
+        <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
+        <!-- maven部署插件 -->
+        <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
+    </properties>
+
+    <!-- 依赖 -->
+    <dependencies>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>24.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 
     <!-- 开源信息 -->
     <licenses>
@@ -120,7 +128,7 @@
                         <executions>
                             <execution>
                                 <!-- id 与 setting.xml 的 gpg 配置中的 id 对应-->
-                                <id>ossrh</id>
+                                <id>OSSRH-84447</id>
                                 <phase>verify</phase>
                                 <goals>
                                     <goal>sign</goal>
